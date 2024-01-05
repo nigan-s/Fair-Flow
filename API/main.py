@@ -2,4 +2,6 @@ import flask
 
 print("Hello World!")
 
-print("Hi, I'm a new line!")
+print("Hi")
+
+print("Hello World")
