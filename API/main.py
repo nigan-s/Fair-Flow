@@ -1,7 +1,19 @@
-import flask
+from flask import Flask, request, jsonify
 
-print("Hello World!")
+app = Flask(__name__)
 
-print("Hi")
+@app.route('/', methods=['GET'])
+def index():
+    return 'Hello World'
 
-print("Hello World")
+@app.route('/api', methods=['POST'])
+def api():
+    if request.method == 'POST':
+        data = request.get_json()
+        user = {
+            'name': data['name']
+        }
+        return jsonify(user)
+
+if __name__ == '__main__':
+    app.run(debug=True)
