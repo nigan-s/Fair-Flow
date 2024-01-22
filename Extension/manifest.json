@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Popup Extension",
+    "version": "1.0",
+    "description": "A simple extension that shows a popup on button click.",
+    "permissions": ["activeTab"],
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "icons": {
+      "48": "icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
